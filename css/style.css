@@ -1,36 +1,222 @@
-/* Center content and style hero section */
 .hero {
-    background-color: white;
-    padding: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--background-color);
+    padding: 100px 20px;
+    text-align: center;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--profile-border-color);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+:root {
+    --background-color: white;
+    --text-color: black;
+    --nav-bg-color: #333;
+    --nav-text-color: white;
+    --profile-border-color: #00bcd4;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: white;
+        --nav-bg-color: #222;
+        --nav-text-color: #00bcd4;
+        --profile-border-color: #00bcd4;
+    }
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* New header styling */
+header {
+    background: linear-gradient(90deg, #00bcd4, #333);
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    background-color: transparent;
+    position: relative;  /* changed from fixed */
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+.about {
+    background-color: var(--background-color);
+    padding: 80px 20px;
     text-align: center;
 }
 
-/* Style the profile picture */
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #333;
+.about h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.projects {
+    background-color: var(--background-color);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project {
+    background-color: var(--nav-bg-color);
+    color: var(--nav-text-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project h3 {
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-/* Add smooth fade-in animation */
-.hero h1 {
-    font-size: 2.5rem;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in-out forwards;
+.project p {
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
-/* Animation keyframes */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    nav ul {
+        flex-direction: row;
+        text-align: center;
     }
+
+    .hero {
+        padding: 50px 10px;
+    }
+
+    .profile-pic {
+        width: 140px;
+        height: 140px;
+    }
+
+    .project-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%;
+    }
+}
+
+/* New footer styling */
+footer {
+    background-color: var(--nav-bg-color);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+footer p {
+    font-size: 1rem;
+    color: var(--nav-text-color);
 }
