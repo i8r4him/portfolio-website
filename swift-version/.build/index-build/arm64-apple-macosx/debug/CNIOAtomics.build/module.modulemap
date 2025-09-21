@@ -1,4 +1,0 @@
-module CNIOAtomics {
-    umbrella header "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/checkouts/swift-nio/Sources/CNIOAtomics/include/CNIOAtomics.h"
-    export *
-}

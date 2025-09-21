@@ -1,0 +1,38 @@
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+
+# Swift
+*.swp
+*.swiftc
+*.swiftmodule
+*.swiftdoc
+
+# Environment files
+.env
+.env.local
+
+# Database
+*.db
+*.sqlite
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Vapor
+Public/uploads/
+Public/uploads/**

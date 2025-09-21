@@ -1,4 +1,0 @@
-module _CWASI {
-    umbrella header "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/checkouts/swift-distributed-tracing/Sources/_CWASI/include/_CWASI.h"
-    export *
-}

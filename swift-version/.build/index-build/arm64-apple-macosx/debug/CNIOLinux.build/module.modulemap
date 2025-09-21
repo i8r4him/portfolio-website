@@ -1,4 +1,0 @@
-module CNIOLinux {
-    umbrella header "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/checkouts/swift-nio/Sources/CNIOLinux/include/CNIOLinux.h"
-    export *
-}
