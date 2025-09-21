@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:portfolio-website}/swift-version",
+            "name": "Debug App (swift-version)",
+            "program": "${workspaceFolder:portfolio-website}/swift-version/.build/debug/App",
+            "preLaunchTask": "swift: Build Debug App (swift-version)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:portfolio-website}/swift-version",
+            "name": "Release App (swift-version)",
+            "program": "${workspaceFolder:portfolio-website}/swift-version/.build/release/App",
+            "preLaunchTask": "swift: Build Release App (swift-version)"
+        }
+    ]
+}

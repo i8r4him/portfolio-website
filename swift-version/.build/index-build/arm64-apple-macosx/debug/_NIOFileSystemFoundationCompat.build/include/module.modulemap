@@ -1,0 +1,3 @@
+module _NIOFileSystemFoundationCompat {
+    header "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/_NIOFileSystemFoundationCompat.build/include/_NIOFileSystemFoundationCompat-Swift.h"
+}

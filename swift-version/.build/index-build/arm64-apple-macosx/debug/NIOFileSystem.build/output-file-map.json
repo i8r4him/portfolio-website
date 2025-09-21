@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/NIOFileSystem.build/master.swiftdeps"
+  },
+  "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/checkouts/swift-nio/Sources/_NIOFileSystemExported/Exports.swift": {
+    "dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/NIOFileSystem.build/Exports.d",
+    "object": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/NIOFileSystem.build/Exports.swift.o",
+    "swiftmodule": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/NIOFileSystem.build/Exports~partial.swiftmodule",
+    "swift-dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/NIOFileSystem.build/Exports.swiftdeps",
+    "diagnostics": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/NIOFileSystem.build/Exports.dia"
+  }
+}

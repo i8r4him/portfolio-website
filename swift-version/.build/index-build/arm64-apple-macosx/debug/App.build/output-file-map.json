@@ -1,0 +1,33 @@
+{
+  "": {
+    "swift-dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/master.swiftdeps"
+  },
+  "/Users/i8r4him/Documents/portfolio-website/swift-version/Sources/App/App.swift": {
+    "dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/App.d",
+    "object": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/App.swift.o",
+    "swiftmodule": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/App~partial.swiftmodule",
+    "swift-dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/App.swiftdeps",
+    "diagnostics": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/App.dia"
+  },
+  "/Users/i8r4him/Documents/portfolio-website/swift-version/Sources/App/Context/PageContexts.swift": {
+    "dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/PageContexts.d",
+    "object": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/PageContexts.swift.o",
+    "swiftmodule": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/PageContexts~partial.swiftmodule",
+    "swift-dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/PageContexts.swiftdeps",
+    "diagnostics": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/PageContexts.dia"
+  },
+  "/Users/i8r4him/Documents/portfolio-website/swift-version/Sources/App/Models/BlogPost.swift": {
+    "dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/BlogPost.d",
+    "object": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/BlogPost.swift.o",
+    "swiftmodule": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/BlogPost~partial.swiftmodule",
+    "swift-dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/BlogPost.swiftdeps",
+    "diagnostics": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/BlogPost.dia"
+  },
+  "/Users/i8r4him/Documents/portfolio-website/swift-version/Sources/App/Models/Project.swift": {
+    "dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/Project.d",
+    "object": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/Project.swift.o",
+    "swiftmodule": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/Project~partial.swiftmodule",
+    "swift-dependencies": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/Project.swiftdeps",
+    "diagnostics": "/Users/i8r4him/Documents/portfolio-website/swift-version/.build/index-build/arm64-apple-macosx/debug/App.build/Project.dia"
+  }
+}
