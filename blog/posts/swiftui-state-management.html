@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced State Management in SwiftUI - Ibrahim's Swift Blog</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/blog.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../../index.html" class="logo">Ibrahim</a>
+                <ul>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <article class="blog-post-detail">
+            <div class="container">
+                <div class="post-header">
+                    <div class="post-meta">
+                        <span class="post-date">December 15, 2024</span>
+                        <span class="post-category swift">Swift</span>
+                        <span class="post-read-time">5 min read</span>
+                    </div>
+                    <h1>Advanced State Management in SwiftUI</h1>
+                    <p class="post-excerpt">Learn how to effectively manage complex state in SwiftUI applications using @State, @Binding, @ObservedObject, and custom state management patterns.</p>
+                </div>
+                
+                <div class="post-content">
+                    <p>State management is one of the most crucial aspects of building robust SwiftUI applications. Understanding how to properly manage state can make the difference between a maintainable, performant app and one that's difficult to debug and scale.</p>
+                    
+                    <h2>Understanding SwiftUI's State System</h2>
+                    <p>SwiftUI provides several property wrappers to help you manage state effectively. Let's explore each one and understand when to use them.</p>
+                    
+                    <h3>@State for Local State</h3>
+                    <p>Use @State for simple, local state that belongs to a single view:</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <span class="language">Swift</span>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <pre><code class="swift">struct CounterView: View {
+    @State private var count = 0
+    
+    var body: some View {
+        VStack {
+            Text("Count: \(count)")
+            Button("Increment") {
+                count += 1
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                    
+                    <h3>@Binding for Two-Way Data Flow</h3>
+                    <p>Use @Binding when you need to pass state between parent and child views:</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <span class="language">Swift</span>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <pre><code class="swift">struct ParentView: View {
+    @State private var isToggled = false
+    
+    var body: some View {
+        VStack {
+            Text("Parent State: \(isToggled ? "ON" : "OFF")")
+            ChildView(isToggled: $isToggled)
+        }
+    }
+}
+
+struct ChildView: View {
+    @Binding var isToggled: Bool
+    
+    var body: some View {
+        Toggle("Toggle Me", isOn: $isToggled)
+    }
+}</code></pre>
+                    </div>
+                    
+                    <h3>@ObservedObject for External State</h3>
+                    <p>For more complex state that needs to be shared across multiple views, use ObservableObject:</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <span class="language">Swift</span>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <pre><code class="swift">@ObservableObject
+class UserManager: ObservableObject {
+    @Published var currentUser: User?
+    @Published var isAuthenticated = false
+    @Published var isLoading = false
+    
+    func login(_ user: User) {
+        isLoading = true
+        // Simulate network call
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.currentUser = user
+            self.isAuthenticated = true
+            self.isLoading = false
+        }
+    }
+    
+    func logout() {
+        currentUser = nil
+        isAuthenticated = false
+    }
+}
+
+struct ContentView: View {
+    @StateObject private var userManager = UserManager()
+    
+    var body: some View {
+        if userManager.isLoading {
+            ProgressView("Loading...")
+        } else if userManager.isAuthenticated {
+            DashboardView()
+                .environmentObject(userManager)
+        } else {
+            LoginView()
+                .environmentObject(userManager)
+        }
+    }
+}</code></pre>
+                    </div>
+                    
+                    <h2>Best Practices for State Management</h2>
+                    
+                    <h3>1. Keep State Close to Where It's Used</h3>
+                    <p>Don't lift state up unnecessarily. Keep @State variables in the view that directly uses them.</p>
+                    
+                    <h3>2. Use @StateObject for Creating ObservableObjects</h3>
+                    <p>When creating a new ObservableObject instance, use @StateObject instead of @ObservedObject to ensure proper lifecycle management.</p>
+                    
+                    <h3>3. Leverage @EnvironmentObject for Deep State Sharing</h3>
+                    <p>For state that needs to be accessed by many views deep in the hierarchy, use @EnvironmentObject:</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <span class="language">Swift</span>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <pre><code class="swift">struct DeepChildView: View {
+    @EnvironmentObject var userManager: UserManager
+    
+    var body: some View {
+        Text("Welcome, \(userManager.currentUser?.name ?? "Guest")!")
+    }
+}</code></pre>
+                    </div>
+                    
+                    <h2>Advanced Patterns</h2>
+                    
+                    <h3>Custom State Management with Combine</h3>
+                    <p>For complex applications, you might want to implement a more sophisticated state management pattern:</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <span class="language">Swift</span>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <pre><code class="swift">import Combine
+
+@ObservableObject
+class AppState: ObservableObject {
+    @Published var user: User?
+    @Published var settings: Settings
+    @Published var networkStatus: NetworkStatus = .connected
+    
+    private var cancellables = Set&lt;AnyCancellable&gt;()
+    
+    init() {
+        self.settings = Settings()
+        setupBindings()
+    }
+    
+    private func setupBindings() {
+        // Example: Update UI when network status changes
+        $networkStatus
+            .sink { status in
+                print("Network status changed to: \(status)")
+            }
+            .store(in: &cancellables)
+    }
+    
+    func updateUser(_ user: User) {
+        self.user = user
+        // Trigger any side effects
+        objectWillChange.send()
+    }
+}</code></pre>
+                    </div>
+                    
+                    <h2>Conclusion</h2>
+                    <p>Effective state management in SwiftUI is about choosing the right tool for the job. Start simple with @State and @Binding, then move to @ObservedObject and @EnvironmentObject as your app grows in complexity. Remember to keep your state as close to where it's used as possible, and don't over-engineer your state management until you need to.</p>
+                    
+                    <div class="post-tags">
+                        <span class="tag">SwiftUI</span>
+                        <span class="tag">State Management</span>
+                        <span class="tag">iOS Development</span>
+                        <span class="tag">Combine</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ibrahim. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="../../assets/js/blog.js"></script>
+</body>
+</html>
